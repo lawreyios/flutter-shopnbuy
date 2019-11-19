@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 class Product {
   int id;
   String name;
@@ -21,4 +23,14 @@ class Product {
     data['imageUrl'] = this.imageUrl;
     return data;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Product &&
+          runtimeType == other.runtimeType &&
+          name == other.name;
+
+  @override
+  int get hashCode => name.hashCode;
 }
