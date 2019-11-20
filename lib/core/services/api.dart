@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shopnbuy/core/models/product.dart';
+import 'package:shopnbuy/helpers/constants.dart';
 
 class API {
-  static const endpoint = 'https://shopnbuy-48859.firebaseio.com/products.json';
+  static const endpoint = URL.ProductList;
 
   var client = new http.Client();
 
@@ -13,9 +14,6 @@ class API {
 
     var data = json.decode(response.body) as List<dynamic>;
 
-    print(data);
-
-    // loop and convert each item to Post
     for (var product in data) {
       products.add(Product.fromJson(product));
     }

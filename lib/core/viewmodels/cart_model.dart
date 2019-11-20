@@ -43,9 +43,13 @@ class CartModel extends BaseModel {
     return cartSummary[name].length;
   }
 
-  void removeFromCart(Product product) {
-    cart.remove(product);
-    notifyListeners();
+  int get totalCost {
+    var cost = 0;
+    cartSummary.keys.forEach((productName) {
+      cost += (cartSummary[productName].first.price *
+          cartSummary[productName].length);
+    });
+    return cost;
   }
 
   void clearCart() {
