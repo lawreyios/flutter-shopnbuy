@@ -1,4 +1,4 @@
-package com.example.shopnbuy
+package com.raywenderlich.shopnbuy
 
 import android.os.Bundle
 

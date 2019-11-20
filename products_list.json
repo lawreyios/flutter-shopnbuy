@@ -1,0 +1,13 @@
+{
+    "products" : [ {
+      "id" : 1,
+      "imageUrl" : "https://i.imgur.com/oYZbJFb.jpg",
+      "name" : "MacBook Pro 16-inch model",
+      "price" : 2399
+    }, {
+      "id" : 2,
+      "imageUrl" : "https://i.imgur.com/b11y1Fx.jpg",
+      "name" : "AirPods Pro",
+      "price" : 249
+    } ]
+  }
