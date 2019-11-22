@@ -14,6 +14,7 @@ class ProductListView extends StatelessWidget {
       children: <Widget>[
         IconButton(
             icon: Icon(Icons.shopping_cart),
+            splashColor: Colors.blue,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
