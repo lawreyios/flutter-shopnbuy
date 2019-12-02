@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopnbuy/UI/views/cart_item_card.dart';
+import 'package:shopnbuy/UI/widgets/cart_item_card.dart';
 import 'package:shopnbuy/core/viewmodels/cart_model.dart';
 import 'package:shopnbuy/helpers/constants.dart';
 
@@ -18,7 +18,7 @@ class CartView extends StatelessWidget {
     Widget cancelButton = FlatButton(
       child: Text("Cancel"),
       onPressed: () {
-        Navigator.of(context).pop();
+        Navigator.of(context).pop(false);
       },
     );
     AlertDialog alert = AlertDialog(
@@ -72,28 +72,37 @@ class CartView extends StatelessWidget {
       appBar: AppBar(
         title: Text(ViewTitle.Cart),
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.done),
-            onPressed: () async {
-              _showConfirmationAlertDialog(context);
-            },
-          )
+          model.cartSize > 0
+              ? IconButton(
+                  icon: Icon(Icons.done),
+                  onPressed: () async {
+                    _showConfirmationAlertDialog(context);
+                  },
+                )
+              : Container()
         ],
       ),
-      body: ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: <Widget>[
-              Padding(
-                child: CartItemCard(
-                    model.getProduct(index), model.getProductQuantity(index)),
-                padding: EdgeInsets.all(10.0),
+      body: model.cartSize > 0
+          ? ListView.builder(
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: <Widget>[
+                    Padding(
+                      child: CartItemCard(model.getProduct(index),
+                          model.getProductQuantity(index)),
+                      padding: EdgeInsets.all(10.0),
+                    ),
+                  ],
+                );
+              },
+              itemCount: model.getCartSummary().keys.length,
+            )
+          : Center(
+              child: Text(
+                'Your cart is empty',
+                style: Theme.of(context).textTheme.subtitle,
               ),
-            ],
-          );
-        },
-        itemCount: model.getCartSummary().keys.length,
-      ),
+            ),
     );
   }
 }
