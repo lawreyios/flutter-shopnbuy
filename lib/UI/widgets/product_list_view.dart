@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopnbuy/UI/views/base_view.dart';
-import 'package:shopnbuy/UI/views/cart_count_badge.dart';
 import 'package:shopnbuy/UI/views/cart_view.dart';
 import 'package:shopnbuy/UI/views/product_list.dart';
+import 'package:shopnbuy/UI/widgets/cart_count_badge.dart';
 import 'package:shopnbuy/core/enums/view_state.dart';
 import 'package:shopnbuy/core/viewmodels/cart_model.dart';
 import 'package:shopnbuy/core/viewmodels/product_list_model.dart';
