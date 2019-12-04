@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopnbuy/UI/widgets/cart_item_card.dart';
+import 'package:shopnbuy/ui/widgets/cart_item_card.dart';
 import 'package:shopnbuy/core/viewmodels/cart_model.dart';
 import 'package:shopnbuy/helpers/constants.dart';
 

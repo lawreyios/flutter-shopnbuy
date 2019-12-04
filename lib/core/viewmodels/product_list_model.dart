@@ -8,11 +8,15 @@ import 'base_model.dart';
 class ProductListModel extends BaseModel {
   API api = dependencyAssembler<API>();
 
-  List<Product> products;
+  List<Product> _products;
+
+  List<Product> get products {
+    return _products;
+  }
 
   Future getProducts() async {
     setState(ViewState.Busy);
-    products = await api.getProducts();
+    _products = await api.getProducts();
     setState(ViewState.Idle);
   }
 }

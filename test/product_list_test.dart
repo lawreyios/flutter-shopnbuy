@@ -42,7 +42,7 @@ void main() {
       expect(productListViewModel.products[1].name, 'AirPods Pro');
       expect(productListViewModel.products[1].price, 249);
     });
-    test('when user adds a product to cart, cart size should increment by 1',
+    test('when user adds a product to cart, badge counter should increment by 1',
         () {
       cartViewModel.addToCart(mockProduct);
 

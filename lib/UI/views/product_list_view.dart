@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopnbuy/UI/views/base_view.dart';
-import 'package:shopnbuy/UI/views/cart_view.dart';
-import 'package:shopnbuy/UI/views/product_list.dart';
-import 'package:shopnbuy/UI/widgets/cart_count_badge.dart';
+import 'package:shopnbuy/ui/views/base_view.dart';
+import 'package:shopnbuy/ui/views/cart_view.dart';
+import 'package:shopnbuy/ui/widgets/cart_count_badge.dart';
+import 'package:shopnbuy/ui/widgets/product_list.dart';
 import 'package:shopnbuy/core/enums/view_state.dart';
 import 'package:shopnbuy/core/viewmodels/cart_model.dart';
 import 'package:shopnbuy/core/viewmodels/product_list_model.dart';
@@ -35,14 +35,15 @@ class ProductListView extends StatelessWidget {
       builder: (context, cartModel, child) => BaseView<ProductListModel>(
         onModelReady: (model) => model.getProducts(),
         builder: (context, model, child) => Scaffold(
-            backgroundColor: Colors.grey.shade50,
-            appBar: AppBar(
-              title: Text(ViewTitle.ProductList),
-              actions: <Widget>[_buildCartButton(context, cartModel)],
-            ),
-            body: model.state == ViewState.Busy
-                ? Center(child: CircularProgressIndicator())
-                : ProductList(model.products, cartModel)),
+          backgroundColor: Colors.grey.shade50,
+          appBar: AppBar(
+            title: Text(ViewTitle.ProductList),
+            actions: <Widget>[_buildCartButton(context, cartModel)],
+          ),
+          body: model.state == ViewState.Busy
+              ? Center(child: CircularProgressIndicator())
+              : ProductList(model.products, cartModel),
+        ),
       ),
     );
   }

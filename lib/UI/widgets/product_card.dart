@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopnbuy/UI/widgets/product_image.dart';
+import 'package:shopnbuy/ui/widgets/product_image.dart';
 import 'package:shopnbuy/core/models/product.dart';
 
 class ProductCard extends StatelessWidget {
