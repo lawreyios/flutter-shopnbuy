@@ -15,8 +15,8 @@ class ProductListModel extends BaseModel {
   }
 
   Future getProducts() async {
-    setState(ViewState.Busy);
+    applyState(ViewState.Busy);
     _products = await api.getProducts();
-    setState(ViewState.Idle);
+    applyState(ViewState.Idle);
   }
 }
