@@ -8,6 +8,4 @@ void main() {
   // TODO 11: Add Mock Products
 
   // TODO 12: Write Cart Page Test Cases
-
-  // TODO 13: Write Checkout Test Cases
 }
